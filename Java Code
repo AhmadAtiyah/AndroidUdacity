@@ -1,0 +1,113 @@
+package com.example.android.quizandroid;
+
+import android.app.Activity;
+import android.graphics.Typeface;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.util.Locale;
+import java.util.Objects;
+
+
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    //----------------------------------------------------------------------------------------------
+    public void Result(View view) {
+        //------------Question 1 -------------------------------------------------------------------
+        CheckBox CheckBox1 = (CheckBox) findViewById(R.id.cb1_1);
+        CheckBox CheckBox2 = (CheckBox) findViewById(R.id.cb1_2);
+        CheckBox CheckBox3 = (CheckBox) findViewById(R.id.cb1_3);
+        Boolean checkBoxState1 = CheckBox1.isChecked();
+        Boolean checkBoxState2 = CheckBox2.isChecked();
+        Boolean checkBoxState3 = CheckBox3.isChecked();
+        if (checkBoxState1 && checkBoxState3) {
+            Toast.makeText(this, "Question 1:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState2 && checkBoxState3) {
+            Toast.makeText(this, "Question 1:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState2 && checkBoxState1) {
+            Toast.makeText(this, "Question 1:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState1) {
+            Toast.makeText(this, "Question 1:\n Wrong Answer ", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState2) {
+            Toast.makeText(this, "Question 1:\n Correct Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState3) {
+            Toast.makeText(this, "Question 1:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        }
+        //------------Question 2 -------------------------------------------------------------------
+        RadioButton rb1 = findViewById(R.id.r2_1);
+        RadioButton rb2 = findViewById(R.id.r2_2);
+        boolean Rb1 = rb1.isChecked();
+        boolean Rb2 = rb2.isChecked();
+        if (Rb1) {
+            Toast.makeText(this, "Question 2:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        }
+        if (Rb2) {
+            Toast.makeText(this, "Question 2:\n Correct Answer", Toast.LENGTH_SHORT).show();
+
+        }
+        //------------Question 3 -------------------------------------------------------------------
+        CheckBox CheckBox3_1 = (CheckBox) findViewById(R.id.cb3_1);
+        CheckBox CheckBox3_2 = (CheckBox) findViewById(R.id.cb3_2);
+        CheckBox CheckBox3_3 = (CheckBox) findViewById(R.id.cb3_3);
+        Boolean checkBoxState3_1 = CheckBox3_1.isChecked();
+        Boolean checkBoxState3_2 = CheckBox3_2.isChecked();
+        Boolean checkBoxState3_3 = CheckBox3_3.isChecked();
+        if (checkBoxState3_1 && checkBoxState3_2) {
+            Toast.makeText(this, "Question 3:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState3_2 && checkBoxState3_3) {
+            Toast.makeText(this, "Question 3:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState3_1 && checkBoxState3_3) {
+            Toast.makeText(this, "Question 3:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState3_1) {
+            Toast.makeText(this, "Question 3:\n Wrong Answer ", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState3_2) {
+            Toast.makeText(this, "Question 3:\n Correct Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState3_3) {
+            Toast.makeText(this, "Question 3:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        }
+        //------------Question 4 ------(RadioButton)-------------------------------------------------------------
+        RadioButton rb3 = findViewById(R.id.r4_1);
+        RadioButton rb4 = (RadioButton) findViewById(R.id.r4_2);
+        boolean Rb3 = rb3.isChecked();
+        boolean Rb4 = rb4.isChecked();
+        if (Rb3) {
+            Toast.makeText(this, "Question 4:\n Correct Answer", Toast.LENGTH_SHORT).show();
+        }
+        if (Rb4) {
+            Toast.makeText(this, "Question 4:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        }
+        //------------Question 5 -------------------------------------------------------------------
+        CheckBox CheckBox5_1 = (CheckBox) findViewById(R.id.cb5_1);
+        CheckBox CheckBox5_2 = (CheckBox) findViewById(R.id.cb5_2);
+        CheckBox CheckBox5_3 = (CheckBox) findViewById(R.id.cb5_3);
+        Boolean checkBoxState5_1 = CheckBox5_1.isChecked();
+        Boolean checkBoxState5_2 = CheckBox5_2.isChecked();
+        Boolean checkBoxState5_3 = CheckBox5_3.isChecked();
+        if (checkBoxState5_1 && checkBoxState5_3) {
+            Toast.makeText(this, "Question 5:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState5_2 && checkBoxState5_3) {
+            Toast.makeText(this, "Question 5:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState5_1) {
+            Toast.makeText(this, "Question 5:\n Correct Answer ", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState5_2) {
+            Toast.makeText(this, "Question 5:\n Correct Answer", Toast.LENGTH_SHORT).show();
+        } else if (checkBoxState5_3) {
+            Toast.makeText(this, "Question 5:\n Wrong Answer", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+}
+
+
